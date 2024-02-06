@@ -12,11 +12,7 @@ public class SpellChecker {
 
 	public static String tail(String str) {
 		
-		if (str.length()==1) {
-			return "";
-		}
-
-		return  str.substring(1, str.length()-1);
+		return  str.substring(1, str.length());
 
 	}
 
