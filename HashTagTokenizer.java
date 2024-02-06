@@ -41,15 +41,16 @@ public class HashTagTokenizer {
         }
 		String s1=hashtag.toLowerCase();
         int N = hashtag.length();
-        for (int i = 0; i <= N; i++) {
-			if (existInDictionary(s1.substring(i, N), dictionary)) {
-				breakHashTag(hashtag.substring(0,i), dictionary);
-				System.out.println(s1.substring(i, N));
-				return;
-			
+		for (int i = 1; i <= N; i++) {
+			String prefix = hashtag.substring(0, i);
+			if (existInDictionary(prefix, dictionary)) {
+				// Found a valid word, print it
+				System.out.println(prefix);
+				// Recur for the remaining part of the hashtag
+				breakHashTag(hashtag.substring(i), dictionary);
+				return; // Stop further processing for this prefix
 			}
-		
-        }
+		}
     }
 
 }
