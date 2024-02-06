@@ -64,7 +64,7 @@ public class SpellChecker {
 			
 		}
 		for (int i = 0; i < d.length; i++) {
-			if (d[i].equals(dictionary[i])) {
+			if (d[i].equals(dictionary[i])&&d[i].equals(word)) {
 				return  d[i];
 			}
 		}
